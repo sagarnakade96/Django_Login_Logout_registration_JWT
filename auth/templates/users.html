@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% block userData %}
+<div class="container text-center my-4">
+    <h6>Content Will be available for the registered condidates</h6>
+    {{ message }}
+    {% if user.is_superuser %}
+    <div class="container my-4">
+        <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">Name</th>
+                <th scope="col">Username</th>
+                <th scope="col">Email</th>
+              </tr>
+            </thead>
+            {% for item in allData %}
+            
+            <tbody>
+                <tr>
+                  <th scope="row">{{ forloop.counter }}</th>
+                  <td>{{ item.name }}</td>
+                  <td>{{ item.username }}</td>
+                  <td>{{ item.email }}</td>
+                </tr>
+            </tbody>
+            
+            {% endfor %}
+          </table>
+    </div>
+    {% endif %}
+</div>
+
+{% endblock userData %}
+{% block body %}
+
+<center class="my-4">
+<h6> OOPS...YOU SEEMED LOST </h6><a href="registerPage">Create new Account</a>
+</center>
+
+  
+{% endblock body %}

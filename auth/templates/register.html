@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %}Sign Up Page{% endblock title %}
+
+{% block body %}
+
+
+<form action="registerUser" method="post">
+   {% csrf_token %}
+    <main>
+        <div class="row">
+            <div class="colm-logo">
+                <img src="{% static 'image/logo.png' %}" alt="Logo">
+                <h2>“No kid deserves to be disappointed”</h2>
+            </div>
+            <div class="colm-form">
+                <div class="form-container">
+                    <center><h2>Signup Form</h2></center><br>
+                    <input type="text" placeholder="Name" name="name">
+                    <input type="text" placeholder="Username" name="username">
+                    <input type="text" placeholder="email" name="email">
+                    <input type="password" placeholder="Password" name="password">
+                    <input type="password" placeholder="Confirm Password" name="cfpassword">
+                    <button class="btn-login">Register</button>
+                    <a href="loginPage">Already Have Account? Click Here</a>
+                    
+                </div>
+                
+            </div>
+        </div>
+    </main>
+</form>
+
+{% endblock body %}
